@@ -1050,6 +1050,19 @@ footer {
     .process h2 {
         font-size: 2rem;
     }
+    
+    .fullscreen-button {
+        position: relative;
+        display: block;
+        margin: 15px auto 35px;
+        padding: 18px 25px;
+        font-size: 1.2rem;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        z-index: 50;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 }
 
 @media (max-width: 480px) {
