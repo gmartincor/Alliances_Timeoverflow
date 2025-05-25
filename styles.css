@@ -213,7 +213,6 @@ nav {
     animation-fill-mode: both;
 }
 
-/* Estilo para la imagen del logo responsive */
 .responsive-logo {
     width: 120px;
     height: auto;
@@ -247,18 +246,24 @@ nav {
     flex-direction: column;
     align-items: center;
     animation: bounce 2s infinite;
+    width: 140px;
+    margin-left: -70px;
+    left: 50%;
 }
 
 .scroll-indicator .scroll-link {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     margin-bottom: 5px;
     color: var(--text-light);
     cursor: pointer;
     text-decoration: none;
     transition: var(--transition);
+    padding: 10px 15px;
+    border-radius: 20px;
 }
 
-.scroll-indicator .scroll-link:hover {
+.scroll-indicator .scroll-link:hover,
+.scroll-indicator .scroll-link:active {
     color: var(--primary-color);
     transform: translateY(-3px);
 }
@@ -301,7 +306,6 @@ nav {
     }
 }
 
-/* Time Banks Section */
 .time-banks {
     padding: 100px 0;
     background-color: var(--background-alt);
@@ -333,6 +337,7 @@ nav {
     width: 100px;
     height: 3px;
     background-color: var(--primary-color);
+    transition: var(--transition);
 }
 
 .time-banks-grid {
@@ -439,7 +444,6 @@ nav {
     }
 }
 
-/* Problem Section */
 .problem {
     padding: 100px 0;
     background-color: var(--background-color);
@@ -527,7 +531,6 @@ nav {
     color: var(--text-light);
 }
 
-/* Project Section */
 .project {
     padding: 100px 0;
     background-color: var(--background-alt);
@@ -631,7 +634,6 @@ nav {
     color: var(--text-light);
 }
 
-/* Process Section */
 .process {
     padding: 100px 0;
     background-color: var(--background-color);
@@ -711,7 +713,6 @@ nav {
     color: var(--primary-color);
 }
 
-/* Impact Section */
 .impact {
     padding: 100px 0;
     background-color: var(--background-alt);
@@ -766,7 +767,6 @@ nav {
     color: var(--text-light);
 }
 
-/* Demo Section */
 .demo-section {
     padding: 100px 0;
     background-color: var(--background-color);
@@ -796,7 +796,7 @@ nav {
     position: relative;
     display: block;
     margin: 10px auto 30px; 
-    padding: 10px 20px;
+    padding: 15px 25px; 
     background-color: var(--background-alt);
     color: var(--text-color);
     border: 1px solid var(--border-color);
@@ -805,9 +805,11 @@ nav {
     font-weight: 600;
     transition: var(--transition);
     z-index: 10;
+    font-size: 1.1rem;
 }
 
-.fullscreen-button:hover {
+.fullscreen-button:hover,
+.fullscreen-button:active {
     background-color: rgba(0, 0, 0, 0.1);
     color: var(--text-color);
     transform: translateY(-3px);
@@ -828,7 +830,6 @@ nav {
     flex-wrap: wrap;
 }
 
-/* Footer */
 footer {
     background-color: var(--background-alt);
     padding: 70px 0 20px;
@@ -921,7 +922,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive Styles */
 @media (max-width: 1024px) {
     .hero-content h1 {
         font-size: 3rem;

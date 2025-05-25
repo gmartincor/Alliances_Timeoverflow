@@ -78,14 +78,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const fullscreenBtn = document.getElementById('fullscreenBtn');
     
     if (fullscreenBtn && demoVideo) {
-        fullscreenBtn.addEventListener('click', function() {
-            if (demoVideo.requestFullscreen) {
-                demoVideo.requestFullscreen();
-            } else if (demoVideo.webkitRequestFullscreen) {
-                demoVideo.webkitRequestFullscreen();
-            } else if (demoVideo.msRequestFullscreen) {
-                demoVideo.msRequestFullscreen();
-            }
+        ['click', 'touchend'].forEach(eventType => {
+            fullscreenBtn.addEventListener(eventType, function(e) {
+                e.preventDefault(); 
+                if (demoVideo.requestFullscreen) {
+                    demoVideo.requestFullscreen();
+                } else if (demoVideo.webkitRequestFullscreen) {
+                    demoVideo.webkitRequestFullscreen();
+                } else if (demoVideo.msRequestFullscreen) {
+                    demoVideo.msRequestFullscreen();
+                }
+            });
         });
     }
     
@@ -118,4 +121,26 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('resize', adjustOrientations);
     adjustOrientations();
+
+    const scrollLink = document.querySelector('.scroll-link');
+    if (scrollLink) {
+        ['click', 'touchend'].forEach(eventType => {
+            scrollLink.addEventListener(eventType, function(e) {
+                e.preventDefault();
+                e.stopPropagation(); 
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }, 10);
+                }
+            });
+        });
+    }
 });
