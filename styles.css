@@ -1054,29 +1054,7 @@ footer {
     }
     
     .fullscreen-button {
-        position: relative;
-        display: block;
-        margin: 10px auto 30px; 
-        padding: 12px 24px;
-        background-color: var(--background-alt);
-        color: var(--text-color);
-        border: 1px solid var(--border-color);
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: var(--transition);
-        z-index: 50;
-        font-size: 1rem;
-        text-decoration: none;
-        text-align: center;
-    }
-
-    .fullscreen-button:hover,
-    .fullscreen-button:active {
-        background-color: rgba(0, 0, 0, 0.1);
-        color: var(--text-color);
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        display: none;
     }
 }
 
