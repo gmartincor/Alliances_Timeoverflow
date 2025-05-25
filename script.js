@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Menu toggle functionality for mobile
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
     
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close mobile menu when clicking a link
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(item => {
         item.addEventListener('click', function() {
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Theme toggle functionality
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = themeToggle.querySelector('i');
     
@@ -37,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
@@ -45,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
         themeIcon.classList.add('fa-sun');
     }
     
-    // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -62,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Animate elements when they come into view
     const animateOnScroll = function() {
         const elements = document.querySelectorAll('.time-concept, .feature-card, .process-step, .impact-card');
         
@@ -76,21 +70,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
     
-    // Run animation check on scroll
     window.addEventListener('scroll', animateOnScroll);
     
-    // Initial animation check
     setTimeout(animateOnScroll, 100);
     
-    // Update YouTube video with actual demo video when available
-    // Replace the placeholder URL with your actual demo video
-    const demoVideo = document.querySelector('.video-container iframe');
-    if (demoVideo) {
-        // Update this URL with your actual demo video
-        // demoVideo.setAttribute('src', 'https://www.youtube.com/embed/YOUR_VIDEO_ID');
+    const demoVideo = document.getElementById('demoVideo');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    
+    if (fullscreenBtn && demoVideo) {
+        fullscreenBtn.addEventListener('click', function() {
+            if (demoVideo.requestFullscreen) {
+                demoVideo.requestFullscreen();
+            } else if (demoVideo.webkitRequestFullscreen) {
+                demoVideo.webkitRequestFullscreen();
+            } else if (demoVideo.msRequestFullscreen) {
+                demoVideo.msRequestFullscreen();
+            }
+        });
     }
     
-    // Adjust the barrier and connection orientations based on screen size
     const adjustOrientations = function() {
         const barrier = document.querySelector('.barrier');
         const connection = document.querySelector('.connection');
@@ -118,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // Run on load and resize
     window.addEventListener('resize', adjustOrientations);
     adjustOrientations();
 });
