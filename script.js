@@ -78,9 +78,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const fullscreenBtn = document.getElementById('fullscreenBtn');
     
     if (fullscreenBtn && demoVideo) {
-        ['click', 'touchend'].forEach(eventType => {
-            fullscreenBtn.addEventListener(eventType, function(e) {
-                e.preventDefault(); 
+        fullscreenBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (demoVideo.requestFullscreen) {
+                demoVideo.requestFullscreen();
+            } else if (demoVideo.webkitRequestFullscreen) {
+                demoVideo.webkitRequestFullscreen();
+            } else if (demoVideo.msRequestFullscreen) {
+                demoVideo.msRequestFullscreen();
+            }
+        });
+        
+        fullscreenBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            setTimeout(function() {
                 if (demoVideo.requestFullscreen) {
                     demoVideo.requestFullscreen();
                 } else if (demoVideo.webkitRequestFullscreen) {
@@ -88,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (demoVideo.msRequestFullscreen) {
                     demoVideo.msRequestFullscreen();
                 }
-            });
-        });
+            }, 10);
+        }, false);
     }
     
     const adjustOrientations = function() {

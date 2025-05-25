@@ -796,7 +796,7 @@ nav {
     position: relative;
     display: block;
     margin: 10px auto 30px; 
-    padding: 15px 25px; 
+    padding: 12px 24px;
     background-color: var(--background-alt);
     color: var(--text-color);
     border: 1px solid var(--border-color);
@@ -804,8 +804,10 @@ nav {
     cursor: pointer;
     font-weight: 600;
     transition: var(--transition);
-    z-index: 10;
-    font-size: 1.1rem;
+    z-index: 50;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
 }
 
 .fullscreen-button:hover,
@@ -1054,14 +1056,27 @@ footer {
     .fullscreen-button {
         position: relative;
         display: block;
-        margin: 15px auto 35px;
-        padding: 18px 25px;
-        font-size: 1.2rem;
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
+        margin: 10px auto 30px; 
+        padding: 12px 24px;
+        background-color: var(--background-alt);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: var(--transition);
         z-index: 50;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 1rem;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .fullscreen-button:hover,
+    .fullscreen-button:active {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: var(--text-color);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 }
 
