@@ -1168,6 +1168,12 @@ footer {
         margin: 0 auto;
     }
     
+    .demo-buttons .btn {
+        width: 100%;
+        min-width: auto;
+        margin-bottom: 10px;
+    }
+    
     .footer-content {
         gap: 30px;
     }
